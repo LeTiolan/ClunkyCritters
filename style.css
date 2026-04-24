@@ -85,13 +85,13 @@ body {
 .back-btn:hover { background: #c9302c; }
 
 .mt-20 { margin-top: 20px; }
-.w-100 { width: 100%; }
+.w-100 { width: 100%; box-sizing: border-box; }
 
 /* Workspaces */
 .layout-workspace {
     display: flex;
     flex-direction: row;
-    width: 1000px;
+    width: 1050px;
     height: 600px;
     background: var(--panel-bg);
     border-radius: 12px;
@@ -136,20 +136,50 @@ body {
     position: relative;
 }
 
-.blueprint-bg { background: #1a2639; /* Blueish grid look */ }
+.blueprint-bg { background: #1a2639; }
 .dark-grid { background: #111; }
-.race-bg { background: #87CEEB; /* Sky blue for arena */ border-bottom: 20px solid #228B22; /* Grass floor at bottom */ }
+.race-bg { background: #87CEEB; border-bottom: 20px solid #228B22; }
 
 /* Arena Layout */
-.layout-arena {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 20px;
-    background: var(--panel-bg);
-    border-radius: 12px;
-}
-.top-bar { display: flex; justify-content: space-between; width: 1200px; align-items: center; margin-bottom: 10px; }
+.top-bar { display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px; }
 .vote-btn { padding: 10px 20px; border: none; border-radius: 6px; cursor: pointer; color: white; font-weight: bold; margin-right: 10px;}
 .vote-btn.good { background: #4CAF50; }
 .vote-btn.bad { background: #f44336; }
+
+/* Library Styles */
+.library-list {
+    flex-grow: 1;
+    background: #1a1c20;
+    border: 1px solid #444;
+    border-radius: 6px;
+    padding: 10px;
+    overflow-y: auto;
+    max-height: 350px;
+}
+
+.library-item {
+    background: #2a2e35;
+    padding: 10px;
+    margin-bottom: 8px;
+    border-radius: 4px;
+    border-left: 4px solid var(--accent);
+    cursor: pointer;
+    font-weight: bold;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: 0.2s;
+}
+
+.library-item:hover { background: #333842; transform: translateX(5px); }
+
+.add-btn {
+    background: var(--accent);
+    color: black;
+    border: none;
+    border-radius: 50%;
+    width: 25px;
+    height: 25px;
+    font-weight: bold;
+    cursor: pointer;
+}
