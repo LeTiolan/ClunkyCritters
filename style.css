@@ -1,0 +1,99 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #22252a; /* Dark blueprint color */
+    color: #ffffff;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    text-align: center;
+}
+
+/* This is the magic class that hides menus seamlessly */
+.hidden {
+    display: none !important;
+}
+
+.screen {
+    width: 90vw;
+    max-width: 900px;
+    background: #2d3136;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.6);
+}
+
+h1 {
+    font-size: 3.5rem;
+    color: #4CAF50;
+    text-shadow: 2px 2px #111;
+    margin-bottom: 10px;
+}
+
+h2 {
+    color: #4CAF50;
+    margin-top: 0;
+}
+
+/* Button Styling */
+button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    margin: 10px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: 0.2s ease-in-out;
+}
+
+button:hover {
+    background-color: #45a049;
+    transform: translateY(-2px); /* Makes buttons "pop" up slightly */
+}
+
+.back-btn {
+    background-color: #d9534f;
+    margin-top: 20px;
+}
+
+.back-btn:hover {
+    background-color: #c9302c;
+}
+
+.vote-btn {
+    background-color: #008CBA;
+}
+
+.vote-btn:hover {
+    background-color: #007bb5;
+}
+
+/* The Canvas Area */
+.canvas-container {
+    background: #1a1c20;
+    border: 2px dashed #555;
+    border-radius: 8px;
+    margin: 20px auto;
+    width: 800px;
+    height: 400px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.placeholder-text {
+    color: #555;
+    font-style: italic;
+}
