@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clunky Critters</title>
+    <link rel="stylesheet" href="style.css">
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/matter-js/0.19.0/matter.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/brain.js/2.0.0-beta.23/brain-browser.min.js"></script>
+</head>
+<body>
+
+    <div id="screen-main" class="screen">
+        <h1>Clunky Critters</h1>
+        <p>Build the body. Wire the brain. Survive the arena.</p>
+        <div class="menu-buttons">
+            <button onclick="showScreen('screen-body')">🔧 1. Body Forge</button>
+            <button onclick="showScreen('screen-brain')">🧠 2. Brain Lab</button>
+            <button onclick="showScreen('screen-race')">🏁 3. The Arena</button>
+        </div>
+    </div>
+
+    <div id="screen-body" class="screen hidden">
+        <h2>The Body Forge</h2>
+        <div class="toolbar">
+            <button>Add Joint 🔵</button>
+            <button>Add Bone 🦴</button>
+            <button>Add Muscle 🔴</button>
+        </div>
+        <div class="canvas-container">
+            <canvas id="body-canvas" width="800" height="400"></canvas>
+            <p class="placeholder-text">Body Canvas Space</p>
+        </div>
+        <button class="back-btn" onclick="showScreen('screen-main')">⬅ Back to Menu</button>
+    </div>
+
+    <div id="screen-brain" class="screen hidden">
+        <h2>The Brain Lab</h2>
+        <div class="toolbar">
+            <button>Add Input 👁️</button>
+            <button>Add Hidden Node ⚙️</button>
+            <button>Add Connection 🔗</button>
+        </div>
+        <div class="canvas-container">
+            <canvas id="brain-canvas" width="800" height="400"></canvas>
+            <p class="placeholder-text">Brain Canvas Space</p>
+        </div>
+        <button class="back-btn" onclick="showScreen('screen-main')">⬅ Back to Menu</button>
+    </div>
+
+    <div id="screen-race" class="screen hidden">
+        <h2>The Arena</h2>
+        <div class="canvas-container">
+            <canvas id="race-canvas" width="800" height="400"></canvas>
+            <p class="placeholder-text">Physics Arena Space</p>
+        </div>
+        <div class="teacher-tools">
+            <button class="vote-btn">👍 Good Boy!</button>
+            <button class="vote-btn">👎 Bad Form!</button>
+            <button>⏭️ Next Generation</button>
+        </div>
+        <button class="back-btn" onclick="showScreen('screen-main')">⬅ Back to Menu</button>
+    </div>
+
+    <script src="ui.js"></script>
+</body>
+</html>
