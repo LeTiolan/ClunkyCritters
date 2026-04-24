@@ -14,53 +14,64 @@
     <div id="screen-main" class="screen">
         <h1>Clunky Critters</h1>
         <p>Build the body. Wire the brain. Survive the arena.</p>
-        <div class="menu-buttons">
-            <button onclick="showScreen('screen-body')">🔧 1. Body Forge</button>
-            <button onclick="showScreen('screen-brain')">🧠 2. Brain Lab</button>
-            <button onclick="showScreen('screen-race')">🏁 3. The Arena</button>
+        <button class="play-btn" onclick="showScreen('screen-hub')">▶ PLAY</button>
+    </div>
+
+    <div id="screen-hub" class="screen hidden">
+        <h2>Game Hub</h2>
+        <div class="hub-buttons">
+            <button class="big-btn" onclick="showScreen('screen-body')">🔧<br>Body Forge</button>
+            <button class="big-btn" onclick="showScreen('screen-brain')">🧠<br>Brain Lab</button>
+            <button class="big-btn" onclick="showScreen('screen-race')">🏁<br>The Arena</button>
+        </div>
+        <button class="back-btn" onclick="showScreen('screen-main')">⬅ Back to Title</button>
+    </div>
+
+    <div id="screen-body" class="screen hidden app-layout">
+        <div class="sidebar">
+            <h3>Parts Box</h3>
+            <p class="hint-text">Drag parts to canvas</p>
+            <div class="drag-item" draggable="true">🔵 Joint Ball</div>
+            <div class="drag-item" draggable="true">🦴 Bone</div>
+            <div class="drag-item" draggable="true">🔴 Muscle</div>
+        </div>
+        <div class="main-area">
+            <h2>The Body Forge</h2>
+            <div class="canvas-container">
+                <canvas id="body-canvas" width="600" height="400"></canvas>
+            </div>
+            <button class="back-btn" onclick="showScreen('screen-hub')">⬅ Back to Hub</button>
         </div>
     </div>
 
-    <div id="screen-body" class="screen hidden">
-        <h2>The Body Forge</h2>
-        <div class="toolbar">
-            <button>Add Joint 🔵</button>
-            <button>Add Bone 🦴</button>
-            <button>Add Muscle 🔴</button>
+    <div id="screen-brain" class="screen hidden app-layout">
+        <div class="sidebar">
+            <h3>Nodes</h3>
+            <p class="hint-text">Drag to network</p>
+            <div class="drag-item" draggable="true">👁️ Input</div>
+            <div class="drag-item" draggable="true">⚙️ Hidden</div>
+            <div class="drag-item" draggable="true">🔗 Wire Tool</div>
         </div>
-        <div class="canvas-container">
-            <canvas id="body-canvas" width="800" height="400"></canvas>
-            <p class="placeholder-text">Body Canvas Space</p>
+        <div class="main-area">
+            <h2>The Brain Lab</h2>
+            <div class="canvas-container">
+                <canvas id="brain-canvas" width="600" height="400"></canvas>
+            </div>
+            <button class="back-btn" onclick="showScreen('screen-hub')">⬅ Back to Hub</button>
         </div>
-        <button class="back-btn" onclick="showScreen('screen-main')">⬅ Back to Menu</button>
     </div>
 
-    <div id="screen-brain" class="screen hidden">
-        <h2>The Brain Lab</h2>
-        <div class="toolbar">
-            <button>Add Input 👁️</button>
-            <button>Add Hidden Node ⚙️</button>
-            <button>Add Connection 🔗</button>
-        </div>
-        <div class="canvas-container">
-            <canvas id="brain-canvas" width="800" height="400"></canvas>
-            <p class="placeholder-text">Brain Canvas Space</p>
-        </div>
-        <button class="back-btn" onclick="showScreen('screen-main')">⬅ Back to Menu</button>
-    </div>
-
-    <div id="screen-race" class="screen hidden">
+    <div id="screen-race" class="screen hidden arena-layout">
         <h2>The Arena</h2>
-        <div class="canvas-container">
-            <canvas id="race-canvas" width="800" height="400"></canvas>
-            <p class="placeholder-text">Physics Arena Space</p>
-        </div>
         <div class="teacher-tools">
             <button class="vote-btn">👍 Good Boy!</button>
             <button class="vote-btn">👎 Bad Form!</button>
             <button>⏭️ Next Generation</button>
         </div>
-        <button class="back-btn" onclick="showScreen('screen-main')">⬅ Back to Menu</button>
+        <div class="canvas-container race-container">
+            <canvas id="race-canvas" width="1000" height="400"></canvas>
+        </div>
+        <button class="back-btn" onclick="showScreen('screen-hub')">⬅ Back to Hub</button>
     </div>
 
     <script src="ui.js"></script>
