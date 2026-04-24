@@ -34,12 +34,14 @@
 
     <div id="screen-body" class="screen hidden layout-workspace">
         <div class="sidebar">
-            <h3>Parts Box</h3>
+            <h3>Step 1: Body</h3>
             <p class="hint">Drag a node to the canvas. Click and drag between nodes to connect.</p>
             <div class="drag-item" draggable="true" id="drag-joint">🔵 Joint Node</div>
             <div class="drag-item" draggable="true" id="drag-bone">🦴 Bone Connect</div>
             <div class="drag-item" draggable="true" id="drag-muscle">🔴 Muscle Connect</div>
-            <button class="back-btn w-100 mt-20" onclick="showScreen('screen-hub')">⬅ Back</button>
+            
+            <button class="back-btn w-100 mt-20" onclick="showScreen('screen-hub')">⬅ Cancel</button>
+            <button class="play-btn w-100 mt-20" style="font-size: 1.2rem; padding: 10px;" onclick="showScreen('screen-brain')">Next: Brain ➡️</button>
         </div>
         <div class="main-area">
             <h2>Body Forge</h2>
@@ -51,12 +53,14 @@
 
     <div id="screen-brain" class="screen hidden layout-workspace">
         <div class="sidebar">
-            <h3>Neural Nodes</h3>
+            <h3>Step 2: Brain</h3>
             <p class="hint">Drag nodes to canvas. Click and drag to wire.</p>
             <div class="drag-item" draggable="true" id="drag-input">👁️ Input Node</div>
             <div class="drag-item" draggable="true" id="drag-hidden">⚙️ Hidden Node</div>
             <div class="drag-item" draggable="true" id="drag-wire">🔗 Wire Tool</div>
-            <button class="back-btn w-100 mt-20" onclick="showScreen('screen-hub')">⬅ Back</button>
+            
+            <button class="back-btn w-100 mt-20" onclick="showScreen('screen-body')">⬅ Back to Body</button>
+            <button class="vote-btn good w-100 mt-20" onclick="saveCreature('New Critter')">💾 Save Creature</button>
         </div>
         <div class="main-area">
             <h2>Brain Lab</h2>
@@ -66,17 +70,26 @@
         </div>
     </div>
 
-    <div id="screen-race" class="screen hidden layout-arena">
-        <div class="top-bar">
-            <h2>🏁 The Arena</h2>
-            <div class="teacher-tools">
-                <button class="vote-btn good">👍 Reward</button>
-                <button class="vote-btn bad">👎 Punish</button>
-                <button class="back-btn" onclick="showScreen('screen-hub')">⬅ Back</button>
-            </div>
+    <div id="screen-race" class="screen hidden layout-workspace">
+        <div class="sidebar">
+            <h3>Critter Library</h3>
+            <p class="hint">Select a saved creature to drop into the race.</p>
+            <div id="library-list" class="library-list">
+                </div>
+            <button class="back-btn w-100 mt-20" onclick="showScreen('screen-hub')">⬅ Exit Arena</button>
         </div>
-        <div class="canvas-container race-bg">
-            <canvas id="race-canvas" width="1200" height="400"></canvas>
+        
+        <div class="main-area" style="align-items: flex-start;">
+            <div class="top-bar w-100">
+                <h2>🏁 The Arena</h2>
+                <div class="teacher-tools">
+                    <button class="vote-btn good">👍 Reward</button>
+                    <button class="vote-btn bad">👎 Punish</button>
+                </div>
+            </div>
+            <div class="canvas-container race-bg">
+                <canvas id="race-canvas" width="800" height="400"></canvas>
+            </div>
         </div>
     </div>
 
